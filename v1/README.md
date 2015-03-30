@@ -28,6 +28,7 @@ The API base URL is
 The various resources you can retrieve from our API are all documented below.
 
 * [Projects](#projects)
+    * [Comments](#comments)
 * [Users](#Users)
 
 ## Projects
@@ -63,6 +64,57 @@ An example result contains
         "project_state": "Active"
       }
     ]
+
+### Comments
+Comments are associated with a project and are attached to a geolocated marker
+
+`GET /api/projects/{project_id}/comments.json` will return all comments for the `{project_id}`
+
+An example result contains
+
+    [
+      {
+        "id": 18,
+        "body": "A very cost effective and proven method for effective consultation and collaboration",
+        "up_votes": 4,
+        "down_votes": 1,
+        "response_text": null,
+        "marker_id": 18,
+        "published_at": "2013-06-09T20:12:22.321+10:00",
+        "created_at": "2013-06-09T20:12:22.353+10:00"
+      },
+      {
+        "id": 81,
+        "body": "Community Issues are important - have your say!",
+        "up_votes": 4,
+        "down_votes": 1,
+        "response_text": null,
+        "marker_id": 81,
+        "published_at": "2013-06-26T09:53:51.402+10:00",
+        "created_at": "2013-06-26T09:53:51.437+10:00"
+      },
+      {
+        "id": 2176,
+        "body": "Great tool!",
+        "up_votes": 0,
+        "down_votes": 0,
+        "response_text": null,
+        "marker_id": 2782,
+        "published_at": "2014-08-15T11:41:10.502+10:00",
+        "created_at": "2014-08-15T11:41:10.586+10:00"
+      },
+      {
+        "id": 129,
+        "body": "New Marker Type! Admin users can now add Information messages/ photos onto the project area.",
+        "up_votes": 4,
+        "down_votes": 2,
+        "response_text": null,
+        "marker_id": 129,
+        "published_at": "2013-07-22T10:39:03.251+10:00",
+        "created_at": "2013-07-22T10:39:03.295+10:00"
+      }
+    ]
+
 
 ## Users
 Social Pinpoint does not require public users to create an account to interact with the site. User accounts are only
