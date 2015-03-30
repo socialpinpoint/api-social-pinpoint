@@ -28,13 +28,16 @@ The API base URL is
 The various resources you can retrieve from our API are all documented below.
 
 * [Projects](#projects)
+* [Users](#Users)
 
 ## Projects
+Engagement activities are organised under projects.
 
+For documentation see [our online documentation](http://wiki.socialpinpoint.com/display/Public/Project+Setup+-+Projects)
 
 `GET /api/projects.json` will return a list of all the projects associated with the site account
 
-An example result
+An example result contains
 
     [
       {
@@ -57,3 +60,29 @@ An example result
       }
     ]
 
+## Users
+Social Pinpoint does not require public users to create an account to interact with the site. User accounts are only
+required for site Administrators so that they can login to the Admin site, have access to system setup, comment
+moderation and review and export system data.
+
+For documentation see [our online documentation](http://wiki.socialpinpoint.com/display/Public/Manage+Users)
+
+`GET /api/users.json` will return a list of all the administrator users associated with the site account
+
+An example result contains
+
+    [
+      {
+        "id": 9,
+        "name": "Account Admin",
+        "email": "demo@socialpinpoint.com",
+        "roles": [
+          {
+            "name": "admin"
+          },
+          {
+            "name": "super_admin"
+          }
+        ]
+      }
+    ]
