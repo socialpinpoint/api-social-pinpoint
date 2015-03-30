@@ -44,19 +44,23 @@ An example result contains
         "id": 3,
         "name": "Social Pinpoint ",
         "slug": "home",
+        "additional_confirmation_message": "We'd greatly appreciate a little further information in order to better understand your comment. Feel free to add any additional information in the area below.",
+        "created_at": "2013-06-09T20:07:29.280+10:00",
+        "start_date": "2014-07-01T00:00:00.000+10:00",
+        "end_date": "2014-09-30T23:59:59.000+10:00",
+        "time_zone": "Australia/Sydney",
         "max_bounds_ratio": "0.6",
         "region": "AU",
-        "additional_confirmation_message": "We'd greatly appreciate a little further information in order to better understand your comment. Feel free to add any additional information in the area below.",
         "lat": "-32.927175",
         "lng": "151.770887",
         "zoom": 16,
         "min_zoom": 10,
         "max_zoom": 25,
-        "project_state": 2,
         "map_type": 3,
         "styles": null,
         "url": "http://demo.lvh.me:3000/api/projects/3.json",
-        "project_url": "http://demo.lvh.me:3000/home"
+        "project_url": "http://demo.lvh.me:3000/home",
+        "project_state": "Active"
       }
     ]
 
