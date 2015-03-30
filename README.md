@@ -1,10 +1,5 @@
+# **Warning: Under Development**
+
 # Social Pinpoint API Documentation
-This document outlines our JSON REST API that client can use to retrieve information in their projects. This API requires authentication.
-
-## Authentication Overview
-
-## Resources
-
-    curl -u user:password https://someurl/example
-
-
+This is the set of specifications for the API of [Social Pinpoint](http://www.socialpinpoint.com). Each version of the
+API has a folder containing a README file that documents the API for that particular version.
