@@ -17,12 +17,12 @@ endpoints or you can provide them in your client of choice when connecting to th
 
 An example providing basic authentication when using `curl` is shown below.
 
-    curl -u user:password https://demo.ourcommunitymap.com/api/project.json
+    curl -u user:password https://demo.ourcommunitymap.com/api/v1/projects.json
 
 # API Overview
 The API base URL is
 
-    https://<yoursubdomain>.ourcommunitymap.com/api
+    https://<yoursubdomain>.ourcommunitymap.com/api/v1
 
 # Resources
 The various resources you can retrieve from our API are all documented below.
@@ -36,7 +36,7 @@ Engagement activities are organised under projects.
 
 For documentation see [our online documentation](http://wiki.socialpinpoint.com/display/Public/Project+Setup+-+Projects)
 
-`GET /api/projects.json` will return a list of all the projects associated with the site account
+`GET /api/v1/projects.json` will return a list of all the projects associated with the site account
 
 An example result contains
 
@@ -57,18 +57,18 @@ An example result contains
         "zoom": 16,
         "min_zoom": 10,
         "max_zoom": 25,
-        "map_type": 3,
         "styles": null,
-        "url": "http://demo.lvh.me:3000/api/projects/3.json",
+        "url": "http://demo.lvh.me:3000/api/v1/projects/3.json",
         "project_url": "http://demo.lvh.me:3000/home",
-        "project_state": "Active"
+        "project_state": "Active",
+        "map_type": "Hybrid"
       }
     ]
 
 ### Comments
 Comments are associated with a project and are attached to a geolocated marker
 
-`GET /api/projects/{project_id}/comments.json` will return all comments for the `{project_id}`
+`GET /api/v1/projects/{project_id}/comments.json` will return all comments for the `{project_id}`
 
 An example result contains
 
@@ -76,9 +76,21 @@ An example result contains
       {
         "id": 18,
         "body": "A very cost effective and proven method for effective consultation and collaboration",
+        "body_extra": null,
         "up_votes": 4,
         "down_votes": 1,
+        "review_notes": null,
         "response_text": null,
+        "ip_address": null,
+        "email": "user@here.blah",
+        "firstname": "",
+        "lastname": null,
+        "phone": null,
+        "postcode": null,
+        "address": null,
+        "suburb": null,
+        "reviewed": true,
+        "moderated": false,
         "marker_id": 18,
         "published_at": "2013-06-09T20:12:22.321+10:00",
         "created_at": "2013-06-09T20:12:22.353+10:00"
@@ -86,33 +98,26 @@ An example result contains
       {
         "id": 81,
         "body": "Community Issues are important - have your say!",
+        "body_extra": "",
         "up_votes": 4,
         "down_votes": 1,
+        "review_notes": "",
         "response_text": null,
+        "ip_address": null,
+        "email": "info@socialpinpoint.com",
+        "firstname": "Fred",
+        "lastname": "Smith",
+        "phone": "",
+        "postcode": "2302",
+        "address": null,
+        "suburb": null,
+        "reviewed": true,
+        "moderated": false,
         "marker_id": 81,
         "published_at": "2013-06-26T09:53:51.402+10:00",
         "created_at": "2013-06-26T09:53:51.437+10:00"
       },
-      {
-        "id": 2176,
-        "body": "Great tool!",
-        "up_votes": 0,
-        "down_votes": 0,
-        "response_text": null,
-        "marker_id": 2782,
-        "published_at": "2014-08-15T11:41:10.502+10:00",
-        "created_at": "2014-08-15T11:41:10.586+10:00"
-      },
-      {
-        "id": 129,
-        "body": "New Marker Type! Admin users can now add Information messages/ photos onto the project area.",
-        "up_votes": 4,
-        "down_votes": 2,
-        "response_text": null,
-        "marker_id": 129,
-        "published_at": "2013-07-22T10:39:03.251+10:00",
-        "created_at": "2013-07-22T10:39:03.295+10:00"
-      }
+      ...
     ]
 
 
@@ -123,7 +128,7 @@ moderation and review and export system data.
 
 For documentation see [our online documentation](http://wiki.socialpinpoint.com/display/Public/Manage+Users)
 
-`GET /api/users.json` will return a list of all the administrator users associated with the site account
+`GET /api/v1/users.json` will return a list of all the administrator users associated with the site account
 
 An example result contains
 
