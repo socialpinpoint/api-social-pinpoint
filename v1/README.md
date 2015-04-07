@@ -48,8 +48,11 @@ The various resources you can retrieve from our API are all documented below.
 * [Projects](#projects)
     * [Markers](#markers)
     * [Comments](#comments)
+    * [Surveys](#surveys)
+    * [Survey Responses](#survey-responses)
     * [Marker Types](#marker-types)
     * [Tags](#tags)
+    * [Statistics](#statistics)
 * [Users](#Users)
 
 ## Projects
@@ -264,6 +267,12 @@ An example result
       ...
     ]
 
+### Surveys
+TODO
+
+### Survey Responses
+TODO
+
 ### Marker Types
 Marker Types (or categories) define the type of comments that users can leave on a map and are associated directly with
 a project.
@@ -318,6 +327,9 @@ An example result
       }
       ...
     ]
+
+### Statistics
+TODO
 
 ## Users
 Social Pinpoint does not require public users to create an account to interact with the site. User accounts are only
