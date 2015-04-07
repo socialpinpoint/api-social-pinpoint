@@ -24,6 +24,24 @@ The API base URL is
 
     https://<yoursubdomain>.ourcommunitymap.com/api/v1
 
+# Notes about id, url and links
+Most resources have some form of linking properties to other resources. We have define these properties as
+
+## id's
+A property `id` will be the numeric id of the resource
+
+A property `property_id` will be the numeric id of the associated property called `property`
+
+## URL's
+URL properties will be a URL linking to the json api url for that resource
+
+For example, a property in a resource called `property_url` would link to something like `https://<yoursubdomain>.ourcommunitymap.com/api/v1/someresource/<property_id>.json`
+
+## Links
+Link properties are actual URLs that link to non-api urls. For example, the `project.json` resource has a `project_link`
+
+    "project_link": "https://demo.ourcommunitymap.com/home",
+
 # Resources
 The various resources you can retrieve from our API are all documented below.
 
@@ -58,8 +76,8 @@ An example result contains
         "min_zoom": 10,
         "max_zoom": 25,
         "styles": null,
-        "url": "http://demo.lvh.me:3000/api/v1/projects/3.json",
-        "project_url": "http://demo.lvh.me:3000/home",
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3.json",
+        "project_link": "https://demo.ourcommunitymap.com/home",
         "project_state": "Active",
         "map_type": "Hybrid"
       }
@@ -72,8 +90,7 @@ Comments are associated with a project and are attached to a geolocated marker
 
 An example result contains
 
-    [
-      {
+    {
         "id": 18,
         "body": "A very cost effective and proven method for effective consultation and collaboration",
         "body_extra": null,
@@ -93,7 +110,10 @@ An example result contains
         "moderated": false,
         "marker_id": 18,
         "published_at": "2013-06-09T20:12:22.321+10:00",
-        "created_at": "2013-06-09T20:12:22.353+10:00"
+        "created_at": "2013-06-09T20:12:22.353+10:00",
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/comments/18.json",
+        "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/18.json",
+        "marker_link": "https://demo.ourcommunitymap.com/home#marker/18"
       },
       {
         "id": 81,
@@ -115,11 +135,46 @@ An example result contains
         "moderated": false,
         "marker_id": 81,
         "published_at": "2013-06-26T09:53:51.402+10:00",
-        "created_at": "2013-06-26T09:53:51.437+10:00"
+        "created_at": "2013-06-26T09:53:51.437+10:00",
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/comments/81.json",
+        "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/81.json",
+        "marker_link": "https://demo.ourcommunitymap.com/home#marker/81"
       },
       ...
     ]
 
+
+## Marker Types / Categories
+Marker Types (or categories) define the type of comments that users can leave on a map and are associated directly with
+a project.
+
+For documentation see [our online documentation](http://wiki.socialpinpoint.com/x/UgAV)
+
+`GET /api/v1/projects/{project_id}/categories.json` will return all marker types for the `{project_id}`
+
+An example result
+
+    [
+      {
+        "id": 9,
+        "name": "Something I like",
+        "marker_url": "markers/green-conversation-map-icon.png",
+        "admin_marker": false,
+        "hint_title": "Leave us your comment",
+        "instruction": null,
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/categories/9.json"
+      },
+      {
+        "id": 10,
+        "name": "Something I don't like",
+        "marker_url": "markers/red-conversation-map-icon.png",
+        "admin_marker": false,
+        "hint_title": "Leave us your comment",
+        "instruction": null,
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/categories/10.json"
+      }
+      ...
+    ]
 
 ## Users
 Social Pinpoint does not require public users to create an account to interact with the site. User accounts are only
@@ -130,7 +185,7 @@ For documentation see [our online documentation](http://wiki.socialpinpoint.com/
 
 `GET /api/v1/users.json` will return a list of all the administrator users associated with the site account
 
-An example result contains
+An example result
 
     [
       {
