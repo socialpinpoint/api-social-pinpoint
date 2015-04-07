@@ -24,20 +24,20 @@ The API base URL is
 
     https://<yoursubdomain>.ourcommunitymap.com/api/v1
 
-# Notes about id, url and links
+## Notes about id, url and links
 Most resources have some form of linking properties to other resources. We have define these properties as
 
-## id's
+### id's
 A property `id` will be the numeric id of the resource
 
 A property `property_id` will be the numeric id of the associated property called `property`
 
-## URL's
+### URL's
 URL properties will be a URL linking to the json api url for that resource
 
 For example, a property in a resource called `property_url` would link to something like `https://<yoursubdomain>.ourcommunitymap.com/api/v1/someresource/<property_id>.json`
 
-## Links
+### Links
 Link properties are actual URLs that link to non-api urls. For example, the `project.json` resource has a `project_link`
 
     "project_link": "https://demo.ourcommunitymap.com/home",
