@@ -47,6 +47,7 @@ The various resources you can retrieve from our API are all documented below.
 
 * [Projects](#projects)
     * [Markers](#markers)
+    * [Information Markers](#information-markers)
     * [Comments](#comments)
     * [Surveys](#surveys)
     * [Survey Responses](#survey-responses)
@@ -168,6 +169,9 @@ An example result
           "areas": "Planning Proposal Notification, NewcastleCBD, CBD"
         }
       },
+
+### Information Markers
+TODO
 
 ### Comments
 Comments are associated with a project and are attached to a geolocated marker
