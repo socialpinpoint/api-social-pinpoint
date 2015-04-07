@@ -46,7 +46,10 @@ Link properties are actual URLs that link to non-api urls. For example, the `pro
 The various resources you can retrieve from our API are all documented below.
 
 * [Projects](#projects)
+    * [Markers](#markers)
     * [Comments](#comments)
+    * [Marker Types](#marker-types)
+    * [Tags](#tags)
 * [Users](#Users)
 
 ## Projects
@@ -56,7 +59,7 @@ For documentation see [our online documentation](http://wiki.socialpinpoint.com/
 
 `GET /api/v1/projects.json` will return a list of all the projects associated with the site account
 
-An example result contains
+An example result
 
     [
       {
@@ -83,14 +86,95 @@ An example result contains
       }
     ]
 
+
+### Markers
+Markers are added to the map via users and also may contain information specifically added by administrators. The API
+call will contain either the associated `comment` or `information_marker`
+
+`GET /api/v1/projects/{project_id}/markers.json` will return all markers for the `{project_id}`
+
+An example result
+
+    [
+      {
+        "id": 732,
+        "lat": "-32.927405",
+        "lng": "151.772808",
+        "category_id": 13,
+        "created_at": "2013-10-10T14:08:35.950+11:00",
+        "published_at": "2013-10-10T14:08:35.941+11:00",
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/732.json",
+        "comment": {
+          "id": 471,
+          "body": "This is a great public space!",
+          "body_extra": null,
+          "up_votes": 1,
+          "down_votes": 0,
+          "review_notes": "",
+          "response_text": null,
+          "ip_address": null,
+          "email": "charles@socialpinpoint.com",
+          "firstname": "charles",
+          "lastname": "connell",
+          "phone": null,
+          "postcode": "2317",
+          "address": null,
+          "suburb": null,
+          "reviewed": true,
+          "moderated": false,
+          "marker_id": 732,
+          "published_at": "2013-10-10T14:08:35.944+11:00",
+          "created_at": "2013-10-10T14:08:35.992+11:00",
+          "areas": "Planning Proposal Notification, NewcastleCBD, CBD",
+          "photos": [
+            {
+              "url": "https://demo.ourcommunitymap.com/uploads/photo/image/5/332/limited_size_cvpark.png"
+            }
+          ]
+        }
+      },
+      {
+        "id": 729,
+        "lat": "-32.926644",
+        "lng": "151.768602",
+        "category_id": 10,
+        "created_at": "2013-10-10T14:00:33.153+11:00",
+        "published_at": "2013-10-10T14:00:33.149+11:00",
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/729.json",
+        "comment": {
+          "id": 468,
+          "body": "Use the tool for feedback on parking!",
+          "body_extra": null,
+          "up_votes": 3,
+          "down_votes": 0,
+          "review_notes": "",
+          "response_text": null,
+          "ip_address": null,
+          "email": "charles@socialpinpoint.com",
+          "firstname": "Charles",
+          "lastname": "Connell",
+          "phone": null,
+          "postcode": "2317",
+          "address": null,
+          "suburb": null,
+          "reviewed": true,
+          "moderated": false,
+          "marker_id": 729,
+          "published_at": "2013-10-10T14:00:33.150+11:00",
+          "created_at": "2013-10-10T14:00:33.247+11:00",
+          "areas": "Planning Proposal Notification, NewcastleCBD, CBD"
+        }
+      },
+
 ### Comments
 Comments are associated with a project and are attached to a geolocated marker
 
 `GET /api/v1/projects/{project_id}/comments.json` will return all comments for the `{project_id}`
 
-An example result contains
+An example result
 
-    {
+    [
+      {
         "id": 18,
         "body": "A very cost effective and proven method for effective consultation and collaboration",
         "body_extra": null,
@@ -111,9 +195,37 @@ An example result contains
         "marker_id": 18,
         "published_at": "2013-06-09T20:12:22.321+10:00",
         "created_at": "2013-06-09T20:12:22.353+10:00",
+        "areas": "Planning Proposal Notification, NewcastleCBD, CBD",
+        "photos": [
+              {
+                "url": "https://demo.ourcommunitymap.com/uploads/photo/image/5/4/limited_size_logo-square.png"
+              }
+        ],
+        "comment_field_values": [
+             {
+               "name": "Age Demographic",
+               "value": "30-39"
+             },
+             {
+               "name": "Gender",
+               "value": "Female"
+             },
+             {
+               "name": "Relationship to Study Area",
+               "value": "I live here"
+             }
+        ],
         "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/comments/18.json",
         "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/18.json",
-        "marker_link": "https://demo.ourcommunitymap.com/home#marker/18"
+        "marker_link": "https://demo.ourcommunitymap.com/home#marker/18",
+        "marker": {
+          "id": 18,
+          "lat": "-32.927702",
+          "lng": "151.772202",
+          "category_id": 9,
+          "created_at": "2013-06-09T20:12:22.322+10:00",
+          "published_at": "2013-06-09T20:12:22.322+10:00"
+        }
       },
       {
         "id": 81,
@@ -136,15 +248,23 @@ An example result contains
         "marker_id": 81,
         "published_at": "2013-06-26T09:53:51.402+10:00",
         "created_at": "2013-06-26T09:53:51.437+10:00",
+        "areas": "Planning Proposal Notification, NewcastleCBD, CBD",
         "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/comments/81.json",
         "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/81.json",
-        "marker_link": "https://demo.ourcommunitymap.com/home#marker/81"
+        "marker_link": "https://demo.ourcommunitymap.com/home#marker/81",
+        "marker": {
+          "id": 81,
+          "lat": "-32.926959",
+          "lng": "151.772668",
+          "category_id": 13,
+          "created_at": "2013-06-26T09:53:51.404+10:00",
+          "published_at": "2013-06-26T09:53:51.404+10:00"
+        }
       },
       ...
     ]
 
-
-## Marker Types / Categories
+### Marker Types
 Marker Types (or categories) define the type of comments that users can leave on a map and are associated directly with
 a project.
 
@@ -172,6 +292,29 @@ An example result
         "hint_title": "Leave us your comment",
         "instruction": null,
         "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/categories/10.json"
+      }
+      ...
+    ]
+
+### Tags
+Tags allow the moderator/reviewer to categorise comments at a finer level to Marker Types.
+
+for document see [our online documentation](http://wiki.socialpinpoint.com/x/VgAV)
+
+`GET /api/v1/projects/{project_id}/tags.json' will return all tags for the `{project_id}`
+
+An example result
+
+    [
+      {
+        "id": 79,
+        "name": "Footpaths",
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/tags/79.json"
+      },
+      {
+        "id": 80,
+        "name": "Industrial",
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/tags/80.json"
       }
       ...
     ]
