@@ -272,10 +272,89 @@ An example result
     ]
 
 ### Surveys
-TODO
+Surveys allow structured feedback and can be attached to information markers or zones (polygons)
+
+`GET /api/v1/projects/{project_id}/surveys.json' will return all configured surveys for the `{project_id}`
+
+An example result
+
+    [
+      {
+        "id": 10,
+        "name": "Infrastructure",
+        "questions": [
+          {
+            "id": 28,
+            "name": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "required": false,
+            "body": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "options": "Shops\r\nSchools\r\nHealth services\r\nRestaurants and cafes\r\nParks",
+            "question_type": "Rank"
+          },
+          {
+            "id": 29,
+            "name": "Relationship to study area (select all that apply)",
+            "required": false,
+            "body": "Relationship to study area (select all that apply)",
+            "options": "I live here\r\nI work here\r\nFrequent Visitor\r\nOther",
+            "question_type": "Checkbox"
+          }
+        ]
+      }
+    ]
+
 
 ### Survey Responses
-TODO
+
+An example result
+
+    [
+      {
+        "id": 5,
+        "name": "Infrastructure",
+        "email": "user@testproject.com",
+        "updated_at": "2014-08-26T16:45:40.806+10:00",
+        "marker_id": 2712,
+        "zone_id": null,
+        "survey_answers": [
+          {
+            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "value": "Shops",
+            "rank": 1
+          },
+          {
+            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "value": "Schools",
+            "rank": 2
+          },
+          {
+            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "value": "Health services",
+            "rank": 3
+          },
+          {
+            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "value": "Restaurants and cafes",
+            "rank": 4
+          },
+          {
+            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "value": "Parks",
+            "rank": 5
+          },
+          {
+            "question": "Relationship to study area (select all that apply)",
+            "value": "I live here",
+            "rank": null
+          },
+          {
+            "question": "Relationship to study area (select all that apply)",
+            "value": "Other",
+            "rank": null
+          }
+        ]
+      }
+    ]
 
 ### Marker Types
 Marker Types (or categories) define the type of comments that users can leave on a map and are associated directly with
