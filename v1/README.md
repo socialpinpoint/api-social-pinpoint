@@ -1,8 +1,8 @@
-# **Warning: Under Development**
-
 # Social Pinpoint API Documentation
 This document outlines our JSON REST API that client can use to retrieve information in their projects. This API
 requires authentication.
+
+### **Warning: The API is still in development so some small changes may occur **
 
 The Social Pinpoint API is REST based and uses [JSON](http://www.json.org/) for serialisation and Basic Authentication
 over SSL for authentication and encrypted communication. The access credentials of any admin user in the site account
