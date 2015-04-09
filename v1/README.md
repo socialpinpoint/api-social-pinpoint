@@ -47,12 +47,13 @@ The various resources you can retrieve from our API are all documented below.
 
 * [Projects](#projects)
     * [Markers](#markers)
-    * [Information Markers](#information-markers)
     * [Comments](#comments)
+    * [Information Markers](#information-markers)
     * [Surveys](#surveys)
     * [Survey Responses](#survey-responses)
     * [Marker Types](#marker-types)
     * [Tags](#tags)
+    * [Zones](#zones)
     * [Statistics](#statistics)
 * [Users](#Users)
 
@@ -101,77 +102,64 @@ An example result
 
     [
       {
-        "id": 732,
-        "lat": "-32.927405",
-        "lng": "151.772808",
-        "category_id": 13,
-        "created_at": "2013-10-10T14:08:35.950+11:00",
-        "published_at": "2013-10-10T14:08:35.941+11:00",
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/732.json",
-        "comment": {
-          "id": 471,
-          "body": "This is a great public space!",
-          "body_extra": null,
-          "up_votes": 1,
+        "id": 1114,
+        "lat": "-32.927455",
+        "lng": "151.771799",
+        "category_id": 55,
+        "created_at": "2014-02-10T17:09:33.587+11:00",
+        "published_at": "2014-04-02T17:09:00.000+11:00",
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/1114.json",
+        "comment": null,
+        "info_marker": {
+          "id": 375,
+          "up_votes": 3,
           "down_votes": 0,
-          "review_notes": "",
-          "response_text": null,
-          "ip_address": null,
-          "email": "charles@socialpinpoint.com",
-          "firstname": "charles",
-          "lastname": "connell",
-          "phone": null,
-          "postcode": "2317",
-          "address": null,
-          "suburb": null,
-          "reviewed": true,
-          "moderated": false,
-          "marker_id": 732,
-          "published_at": "2013-10-10T14:08:35.944+11:00",
-          "created_at": "2013-10-10T14:08:35.992+11:00",
-          "areas": "Planning Proposal Notification, NewcastleCBD, CBD",
+          "body": "<h2>Online Mapping for Community Engagement</h2><p><a href=\"http://www.socialpinpoint.com\">www.socialpinpoint.com</a></p>",
+          "summary": "Social Pinpoint ",
+          "marker_id": 1114,
+          "published_at": "2014-04-02T17:09:00.000+11:00",
+          "created_at": "2014-02-10T17:09:33.591+11:00",
           "photos": [
             {
-              "url": "https://demo.ourcommunitymap.com/uploads/photo/image/5/332/limited_size_cvpark.png"
+              "url": "https://demo.ourcommunitymap.com/uploads/photo/image/5/459/limited_size_SocialPinpoint_Landscape_Icon.jpg"
             }
           ]
         }
       },
       {
-        "id": 729,
-        "lat": "-32.926644",
-        "lng": "151.768602",
-        "category_id": 10,
-        "created_at": "2013-10-10T14:00:33.153+11:00",
-        "published_at": "2013-10-10T14:00:33.149+11:00",
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/729.json",
+        "id": 775,
+        "lat": "-32.927231",
+        "lng": "151.772601",
+        "category_id": 9,
+        "created_at": "2013-10-24T14:54:05.696+11:00",
+        "published_at": "2013-10-24T14:54:05.680+11:00",
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/775.json",
         "comment": {
-          "id": 468,
-          "body": "Use the tool for feedback on parking!",
-          "body_extra": null,
-          "up_votes": 3,
+          "id": 485,
+          "body": "This is my comment",
+          "body_extra": "",
+          "up_votes": 0,
           "down_votes": 0,
           "review_notes": "",
           "response_text": null,
           "ip_address": null,
           "email": "charles@socialpinpoint.com",
-          "firstname": "Charles",
-          "lastname": "Connell",
+          "firstname": null,
+          "lastname": null,
           "phone": null,
-          "postcode": "2317",
+          "postcode": null,
           "address": null,
           "suburb": null,
-          "reviewed": true,
+          "reviewed": false,
           "moderated": false,
-          "marker_id": 729,
-          "published_at": "2013-10-10T14:00:33.150+11:00",
-          "created_at": "2013-10-10T14:00:33.247+11:00",
+          "marker_id": 775,
+          "published_at": "2013-10-24T14:54:05.690+11:00",
+          "created_at": "2013-10-24T14:54:05.741+11:00",
           "areas": "Planning Proposal Notification, NewcastleCBD, CBD"
-        }
-      },
-
-### Information Markers
-TODO
+        },
+        "info_marker": null
+      }
+    ]
 
 ### Comments
 Comments are associated with a project and are attached to a geolocated marker
@@ -269,6 +257,87 @@ An example result
         }
       },
       ...
+    ]
+
+### Information Markers
+Social Pinpoint allows you to configure Admin (or Information) Markers that can only be selected/ dragged onto the map by Administrators when logged into the system and are useful for displaying information related to areas on the map.
+
+For documentation see [our online documentation](http://wiki.socialpinpoint.com/x/KwAc)
+
+`GET /api/v1/projects/{project_id}/info_markers.json` will return all markers for the `{project_id}`
+
+An example result
+
+    [
+      {
+        "id": 261,
+        "up_votes": 3,
+        "down_votes": 1,
+        "body": "<p><strong>Proposed Tree Plantation Site</strong></p>\n\n<p>Improving the streetscape by planting trees? Why not inform the community about the project and allow stakeholders to have their say. </p>\n\n<p>Provide species information; <a href=\"https://demo.ourcommunitymap.com/home\">links to more infomation</a> - inform and engage!</p>\n",
+        "summary": "Proposed Tree Plantation Site",
+        "marker_id": 736,
+        "published_at": "2013-10-10T14:25:05.895+11:00",
+        "created_at": "2013-10-10T14:25:05.907+11:00",
+        "photos": [
+          {
+            "url": "https://demo.ourcommunitymap.com/uploads/photo/image/5/333/limited_size_TullichSt_Services.png"
+          }
+        ],
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/info_markers/261.json",
+        "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/736.json",
+        "marker_link": "https://demo.ourcommunitymap.com/home#marker/736",
+        "marker": {
+          "id": 736,
+          "lat": "-32.928468",
+          "lng": "151.776026",
+          "category_id": 55,
+          "created_at": "2013-10-10T14:25:05.903+11:00",
+          "published_at": "2013-10-10T14:25:05.893+11:00"
+        }
+      },
+      {
+        "id": 536,
+        "up_votes": 0,
+        "down_votes": 0,
+        "body": "",
+        "summary": "First release of Geo-Survey functionality!",
+        "marker_id": 2712,
+        "published_at": "2014-08-14T15:02:00.000+10:00",
+        "created_at": "2014-08-14T11:41:54.438+10:00",
+        "survey": {
+          "id": 10,
+          "name": "Infrastructure",
+          "questions": [
+            {
+              "id": 28,
+              "name": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+              "required": false,
+              "body": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+              "options": "Shops\r\nSchools\r\nHealth services\r\nRestaurants and cafes\r\nParks",
+              "question_type": "Rank"
+            },
+            {
+              "id": 29,
+              "name": "Relationship to study area (select all that apply)",
+              "required": false,
+              "body": "Relationship to study area (select all that apply)",
+              "options": "I live here\r\nI work here\r\nFrequent Visitor\r\nOther",
+              "question_type": "Checkbox"
+            }
+          ]
+        },
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/info_markers/536.json",
+        "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/2712.json",
+        "marker_link": "https://demo.ourcommunitymap.com/home#marker/2712",
+        "marker": {
+          "id": 2712,
+          "lat": "-32.928319",
+          "lng": "151.769707",
+          "category_id": 212,
+          "created_at": "2014-08-14T11:41:54.351+10:00",
+          "published_at": "2014-08-14T15:02:00.000+10:00"
+        }
+      }
     ]
 
 ### Surveys
@@ -411,8 +480,69 @@ An example result
       ...
     ]
 
+### Zones
+
+`GET /api/v1/projects/{project_id}/zones.json' will return all tags for the `{project_id}`
+
+An example result
+
+    [
+      {
+        "id": 5,
+        "name": "Place Management Strategy",
+        "colour": "#000000",
+        "line_opacity": "0.4",
+        "line_width": 4,
+        "fill_colour": "#000000",
+        "fill_opacity": "0.05",
+        "updated_at": "2014-03-20T11:40:39.984+11:00",
+        "area_info": "",
+        "zindex": 400,
+        "legend_stroke_colour": "#000000",
+        "legend_fill_colour": "#000000",
+        "legend_label": "Place Management Strategy",
+        "show_labels": false,
+        "min_zoom": 11,
+        "max_zoom": 15,
+        "font_size": 24,
+        "label_font_color": "#000000",
+        "label_stroke_color": "#ffffff",
+        "label_stroke_weight": 4,
+        "label_alignment": 2,
+        "label_offset": 0,
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/zones/5.json",
+        "zone_group": null
+      },
+      {
+        "id": 4,
+        "name": "Growth Strategies",
+        "colour": "#000000",
+        "line_opacity": "0.4",
+        "line_width": 4,
+        "fill_colour": "#000000",
+        "fill_opacity": "0.05",
+        "updated_at": "2014-03-20T11:40:44.758+11:00",
+        "area_info": "",
+        "zindex": 400,
+        "legend_stroke_colour": "#000000",
+        "legend_fill_colour": "#000000",
+        "legend_label": "Growth Strategies",
+        "show_labels": false,
+        "min_zoom": 11,
+        "max_zoom": 15,
+        "font_size": 24,
+        "label_font_color": "#000000",
+        "label_stroke_color": "#ffffff",
+        "label_stroke_weight": 4,
+        "label_alignment": 2,
+        "label_offset": 0,
+        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/zones/4.json",
+        "zone_group": null
+      }
+
 ### Statistics
-TODO
+This is still to be implemented. We forsee this reporting various project metrics that are currently visible on the
+admin dashboard
 
 ## Users
 Social Pinpoint does not require public users to create an account to interact with the site. User accounts are only
