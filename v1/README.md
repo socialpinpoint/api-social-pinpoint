@@ -76,18 +76,20 @@ An example result
         "start_date": "2014-07-01T00:00:00.000+10:00",
         "end_date": "2014-09-30T23:59:59.000+10:00",
         "time_zone": "Australia/Sydney",
-        "max_bounds_ratio": "0.6",
         "region": "AU",
-        "lat": "-32.927175",
-        "lng": "151.770887",
-        "zoom": 16,
-        "min_zoom": 10,
-        "max_zoom": 25,
-        "styles": null,
         "url": "https://demo.ourcommunitymap.com/api/v1/projects/3.json",
         "project_link": "https://demo.ourcommunitymap.com/home",
         "project_state": "Active",
-        "map_type": "Hybrid"
+        "map": {
+                    "max_bounds_ratio": "0.6",
+                    "lat": "-32.92418",
+                    "lng": "151.62453",
+                    "zoom": 15,
+                    "min_zoom": 10,
+                    "max_zoom": 25,
+                    "styles": "",
+                    "map_type": "Hybrid"
+                }
       }
     ]
 
