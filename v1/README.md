@@ -96,11 +96,15 @@ An example result
 
 ### Markers
 Markers are added to the map via users and also may contain information specifically added by administrators. The API
-call will contain either the associated `comment` or `information_marker`
+call will contain either the associated `comment` or `information_marker`.
 
-`GET /api/v1/projects/{project_id}/markers.json` will return all markers for the `{project_id}`
+`GET /api/v1/projects/{project_id}/markers.json` will return all markers for the `{project_id}`.
 
-An example result
+This endpoint also accepts a `start_date` parameter, allowing you to scope your query to markers created on or after this date.
+
+For example, `GET /api/v1/projects/{project_id}/markers.json?start_date=20160531` will return all markers for the `{project_id}` created on or after May 31st, 2016. If a `start_date` parameter is not provided, all markers will be returned starting from the first record.
+
+An example result:
 
     [
       {
@@ -163,12 +167,25 @@ An example result
       }
     ]
 
+Results are paginated, at 50 results per page. Pagination links are returned in the response headers in the following format:
+
+```
+<https://demo.ourcommunitymap.com/api/v1/projects/3/markers.json?page=1&start_date=20160531>; rel="first",
+<https://demo.ourcommunitymap.com/api/v1/projects/3/markers.json?page=1&start_date=20160531>; rel="prev",
+<https://demo.ourcommunitymap.com/api/v1/projects/3/markers.json?page=23&start_date=20160531>; rel="last",
+<https://demo.ourcommunitymap.com/api/v1/projects/3/markers.json?page=3&start_date=20160531>; rel="next"
+```
+
 ### Comments
-Comments are associated with a project and are attached to a geolocated marker
+Comments are associated with a project and are attached to a geolocated marker.
 
-`GET /api/v1/projects/{project_id}/comments.json` will return all comments for the `{project_id}`
+`GET /api/v1/projects/{project_id}/comments.json` will return all comments for the `{project_id}`.
 
-An example result
+The `/comments.json` endpoint also accepts a `start_date` parameter, allowing you to scope your query to comments created on or after this date.
+
+For example, `GET /api/v1/projects/{project_id}/comments.json?start_date=20160531` will return all comments for the `{project_id}` created on or after May 31st, 2016. If a `start_date` parameter is not provided, all comments will be returned starting from the first record.
+
+An example result:
 
     [
       {
@@ -260,6 +277,15 @@ An example result
       },
       ...
     ]
+
+Results are paginated, at 50 results per page. Pagination links are returned in the response headers in the following format:
+
+```
+<https://demo.ourcommunitymap.com/api/v1/projects/3/comments.json?page=1&start_date=20160531>; rel="first",
+<https://demo.ourcommunitymap.com/api/v1/projects/3/comments.json?page=1&start_date=20160531>; rel="prev",
+<https://demo.ourcommunitymap.com/api/v1/projects/3/comments.json?page=23&start_date=20160531>; rel="last",
+<https://demo.ourcommunitymap.com/api/v1/projects/3/comments.json?page=3&start_date=20160531>; rel="next"
+```
 
 ### Information Markers
 Social Pinpoint allows you to configure Admin (or Information) Markers that can only be selected/ dragged onto the map by Administrators when logged into the system and are useful for displaying information related to areas on the map.
