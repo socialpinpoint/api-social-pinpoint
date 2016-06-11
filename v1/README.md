@@ -180,7 +180,7 @@ Comments are associated with a project and are attached to a geolocated marker.
 
 `GET /api/v1/projects/{project_id}/comments.json` will return all comments for the `{project_id}`.
 
-The `/comments.json` endpoint accepts a `start_date` parameter, allowing you to scope your query to comments created on or after this date.
+This endpoint accepts a `start_date` parameter, allowing you to scope your query to comments created on or after this date.
 
 For example, `GET /api/v1/projects/{project_id}/comments.json?start_date=20160531` will return all comments for the `{project_id}` created on or after May 31st, 2016 (UTC). If a `start_date` parameter is not provided, all comments will be returned starting from the first record.
 
