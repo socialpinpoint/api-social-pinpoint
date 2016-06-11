@@ -2,14 +2,13 @@
 This document outlines our JSON REST API that client can use to retrieve information in their projects. This API
 requires authentication.
 
-### **Warning: The API is still in development so some small changes may occur **
+### **Warning: The API is still in development so some small changes may occur**
 
 The Social Pinpoint API is REST based and uses [JSON](http://www.json.org/) for serialisation and Basic Authentication
 over SSL for authentication and encrypted communication. The access credentials of any admin user in the site account
 in question can be used to access the API.
 
 Non admin access is at present not available.
-
 
 # Authentication Overview
 The API is protected by Basic HTTP Authentication over SSL. You will be prompted in your browser when accessing our API
@@ -20,25 +19,25 @@ An example providing basic authentication when using `curl` is shown below.
     curl -u user:password https://demo.ourcommunitymap.com/api/v1/projects.json
 
 # API Overview
-The API base URL is
+The API base URL is:
 
     https://<yoursubdomain>.ourcommunitymap.com/api/v1
 
-## Notes about id, url and links
-Most resources have some form of linking properties to other resources. We have define these properties as
+## Notes about IDs, URLs and links
+Most resources have some form of linking properties to other resources. We have defined these properties as:
 
-### id's
-A property `id` will be the numeric id of the resource
+### IDs
+A property `id` will be the numeric id of the resource.
 
-A property `property_id` will be the numeric id of the associated property called `property`
+A property `property_id` will be the numeric id of the associated property called `property`.
 
-### URL's
-URL properties will be a URL linking to the json api url for that resource
+### URLs
+URL properties will be a URL linking to the json api url for that resource.
 
-For example, a property in a resource called `property_url` would link to something like `https://<yoursubdomain>.ourcommunitymap.com/api/v1/someresource/<property_id>.json`
+For example, a property in a resource called `property_url` would link to something like: `https://<yoursubdomain>.ourcommunitymap.com/api/v1/someresource/<property_id>.json`
 
 ### Links
-Link properties are actual URLs that link to non-api urls. For example, the `project.json` resource has a `project_link`
+Link properties are actual URLs that link to non-api urls. For example, the `project.json` resource has a `project_link`:
 
     "project_link": "https://demo.ourcommunitymap.com/home",
 
@@ -60,11 +59,11 @@ The various resources you can retrieve from our API are all documented below.
 ## Projects
 Engagement activities are organised under projects.
 
-For documentation see [our online documentation](http://wiki.socialpinpoint.com/display/Public/Project+Setup+-+Projects)
+For documentation see [our online documentation](http://wiki.socialpinpoint.com/display/Public/Project+Setup+-+Projects).
 
-`GET /api/v1/projects.json` will return a list of all the projects associated with the site account
+`GET /api/v1/projects.json` will return a list of all the projects associated with the site account.
 
-An example result
+An example result:
 
     [
       {
@@ -100,7 +99,7 @@ call will contain either the associated `comment` or `information_marker`.
 
 `GET /api/v1/projects/{project_id}/markers.json` will return all markers for the `{project_id}`.
 
-This endpoint also accepts a `start_date` parameter, allowing you to scope your query to markers created on or after this date.
+This endpoint accepts a `start_date` parameter, allowing you to scope your query to markers created on or after this date.
 
 For example, `GET /api/v1/projects/{project_id}/markers.json?start_date=20160531` will return all markers for the `{project_id}` created on or after May 31st, 2016. If a `start_date` parameter is not provided, all markers will be returned starting from the first record.
 
@@ -167,7 +166,7 @@ An example result:
       }
     ]
 
-Results are paginated, at 50 results per page. Pagination links are returned in the response headers in the following format:
+Results are paginated at 50 results per page. Pagination links are returned in the response headers in the following format:
 
 ```
 <https://demo.ourcommunitymap.com/api/v1/projects/3/markers.json?page=1&start_date=20160531>; rel="first",
@@ -181,7 +180,7 @@ Comments are associated with a project and are attached to a geolocated marker.
 
 `GET /api/v1/projects/{project_id}/comments.json` will return all comments for the `{project_id}`.
 
-The `/comments.json` endpoint also accepts a `start_date` parameter, allowing you to scope your query to comments created on or after this date.
+The `/comments.json` endpoint accepts a `start_date` parameter, allowing you to scope your query to comments created on or after this date.
 
 For example, `GET /api/v1/projects/{project_id}/comments.json?start_date=20160531` will return all comments for the `{project_id}` created on or after May 31st, 2016. If a `start_date` parameter is not provided, all comments will be returned starting from the first record.
 
@@ -278,7 +277,7 @@ An example result:
       ...
     ]
 
-Results are paginated, at 50 results per page. Pagination links are returned in the response headers in the following format:
+Results are paginated at 50 results per page. Pagination links are returned in the response headers in the following format:
 
 ```
 <https://demo.ourcommunitymap.com/api/v1/projects/3/comments.json?page=1&start_date=20160531>; rel="first",
@@ -290,11 +289,11 @@ Results are paginated, at 50 results per page. Pagination links are returned in 
 ### Information Markers
 Social Pinpoint allows you to configure Admin (or Information) Markers that can only be selected/ dragged onto the map by Administrators when logged into the system and are useful for displaying information related to areas on the map.
 
-For documentation see [our online documentation](http://wiki.socialpinpoint.com/x/KwAc)
+For documentation see [our online documentation](http://wiki.socialpinpoint.com/x/KwAc).
 
-`GET /api/v1/projects/{project_id}/info_markers.json` will return all markers for the `{project_id}`
+`GET /api/v1/projects/{project_id}/info_markers.json` will return all markers for the `{project_id}`.
 
-An example result
+An example result:
 
     [
       {
@@ -369,11 +368,11 @@ An example result
     ]
 
 ### Surveys
-Surveys allow structured feedback and can be attached to information markers or zones (polygons)
+Surveys allow structured feedback and can be attached to information markers or zones (polygons).
 
-`GET /api/v1/projects/{project_id}/surveys.json' will return all configured surveys for the `{project_id}`
+`GET /api/v1/projects/{project_id}/surveys.json'` will return all configured surveys for the `{project_id}`.
 
-An example result
+An example result:
 
     [
       {
@@ -403,7 +402,7 @@ An example result
 
 ### Survey Responses
 
-An example result
+An example result:
 
     [
       {
@@ -457,11 +456,11 @@ An example result
 Marker Types (or categories) define the type of comments that users can leave on a map and are associated directly with
 a project.
 
-For documentation see [our online documentation](http://wiki.socialpinpoint.com/x/UgAV)
+For documentation see [our online documentation](http://wiki.socialpinpoint.com/x/UgAV).
 
-`GET /api/v1/projects/{project_id}/categories.json` will return all marker types for the `{project_id}`
+`GET /api/v1/projects/{project_id}/categories.json` will return all marker types for the `{project_id}`.
 
-An example result
+An example result:
 
     [
       {
@@ -488,11 +487,11 @@ An example result
 ### Tags
 Tags allow the moderator/reviewer to categorise comments at a finer level to Marker Types.
 
-for document see [our online documentation](http://wiki.socialpinpoint.com/x/VgAV)
+for document see [our online documentation](http://wiki.socialpinpoint.com/x/VgAV).
 
-`GET /api/v1/projects/{project_id}/tags.json' will return all tags for the `{project_id}`
+`GET /api/v1/projects/{project_id}/tags.json'` will return all tags for the `{project_id}`.
 
-An example result
+An example result:
 
     [
       {
@@ -510,9 +509,9 @@ An example result
 
 ### Zones
 
-`GET /api/v1/projects/{project_id}/zones.json' will return all tags for the `{project_id}`
+`GET /api/v1/projects/{project_id}/zones.json'` will return all tags for the `{project_id}`.
 
-An example result
+An example result:
 
     [
       {
@@ -569,19 +568,19 @@ An example result
       }
 
 ### Statistics
-This is still to be implemented. We forsee this reporting various project metrics that are currently visible on the
-admin dashboard
+This is still to be implemented. We foresee this reporting various project metrics that are currently visible on the
+admin dashboard.
 
 ## Users
 Social Pinpoint does not require public users to create an account to interact with the site. User accounts are only
 required for site Administrators so that they can login to the Admin site, have access to system setup, comment
 moderation and review and export system data.
 
-For documentation see [our online documentation](http://wiki.socialpinpoint.com/display/Public/Manage+Users)
+For documentation see [our online documentation](http://wiki.socialpinpoint.com/display/Public/Manage+Users).
 
-`GET /api/v1/users.json` will return a list of all the administrator users associated with the site account
+`GET /api/v1/users.json` will return a list of all the administrator users associated with the site account.
 
-An example result
+An example result:
 
     [
       {
