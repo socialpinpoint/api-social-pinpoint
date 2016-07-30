@@ -99,7 +99,7 @@ call will contain either the associated `comment` or `information_marker`.
 
 `GET /api/v1/projects/{project_id}/markers.json` will return all markers for the `{project_id}`.
 
-This endpoint accepts a `timestamp` parameter, allowing you to scope your query to markers created on or after this point in the epoch.
+This endpoint accepts a `timestamp` parameter, allowing you to scope your query to markers published on or after this point in the epoch.
 
 For example, `GET /api/v1/projects/{project_id}/markers.json?timestamp=1464652800` will return all markers for the `{project_id}` published on or after 31 May 2016 00:00:00 (UTC). If a `timestamp` parameter is not provided all markers will be returned, beginning from the first record.
 
