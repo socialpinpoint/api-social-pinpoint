@@ -101,7 +101,7 @@ call will contain either the associated `comment` or `information_marker`.
 
 This endpoint accepts a `timestamp` parameter, allowing you to scope your query to markers created on or after this point in the epoch.
 
-For example, `GET /api/v1/projects/{project_id}/markers.json?timestamp=1464652800` will return all markers for the `{project_id}` published on or after 31 May 2016 00:00:00 (UTC). If a `timestamp` parameter is not provided, all markers will be returned starting from the first record.
+For example, `GET /api/v1/projects/{project_id}/markers.json?timestamp=1464652800` will return all markers for the `{project_id}` published on or after 31 May 2016 00:00:00 (UTC). If a `timestamp` parameter is not provided all markers will be returned, beginning from the first record.
 
 An example result:
 
@@ -182,7 +182,7 @@ Comments are associated with a project and are attached to a geolocated marker.
 
 This endpoint accepts a `timestamp` parameter, allowing you to scope your query to comments created on or after this point in the epoch.
 
-For example, `GET /api/v1/projects/{project_id}/comments.json?timestamp=1464652800` will return all comments for the `{project_id}` created on or after 31 May 2016 00:00:00 (UTC). If a `timestamp` parameter is not provided, all comments will be returned starting from the first record.
+For example, `GET /api/v1/projects/{project_id}/comments.json?timestamp=1464652800` will return all comments for the `{project_id}` created on or after 31 May 2016 00:00:00 (UTC). If a `timestamp` parameter is not provided all comments will be returned, beginning from the first record.
 
 An example result:
 
