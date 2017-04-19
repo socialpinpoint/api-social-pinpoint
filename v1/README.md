@@ -17,12 +17,12 @@ endpoints or you can provide them in your client of choice when connecting to th
 
 An example providing basic authentication when using `curl` is shown below.
 
-    curl -u user:password https://demo.ourcommunitymap.com/api/v1/projects.json
+    curl -u user:password https://demo.mysocialpinpoint.com/api/v1/projects.json
 
 # API Overview
 The API base URL is
 
-    https://<yoursubdomain>.ourcommunitymap.com/api/v1
+    https://<yoursubdomain>.mysocialpinpoint.com/api/v1
 
 ## Notes about id, url and links
 Most resources have some form of linking properties to other resources. We have define these properties as
@@ -35,12 +35,12 @@ A property `property_id` will be the numeric id of the associated property calle
 ### URL's
 URL properties will be a URL linking to the json api url for that resource
 
-For example, a property in a resource called `property_url` would link to something like `https://<yoursubdomain>.ourcommunitymap.com/api/v1/someresource/<property_id>.json`
+For example, a property in a resource called `property_url` would link to something like `https://<yoursubdomain>.mysocialpinpoint.com/api/v1/someresource/<property_id>.json`
 
 ### Links
 Link properties are actual URLs that link to non-api urls. For example, the `project.json` resource has a `project_link`
 
-    "project_link": "https://demo.ourcommunitymap.com/home",
+    "project_link": "https://demo.mysocialpinpoint.com/home",
 
 # Paging
 Various resources support paging. If the resource does then the paging details are returned in the response headers
@@ -118,7 +118,7 @@ An example result
         "category_id": 55,
         "created_at": "2014-02-10T17:09:33.587+11:00",
         "published_at": "2014-04-02T17:09:00.000+11:00",
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/1114.json",
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/1114.json",
         "comment": null,
         "info_marker": {
           "id": 375,
@@ -131,7 +131,7 @@ An example result
           "created_at": "2014-02-10T17:09:33.591+11:00",
           "photos": [
             {
-              "url": "https://demo.ourcommunitymap.com/uploads/photo/image/5/459/limited_size_SocialPinpoint_Landscape_Icon.jpg"
+              "url": "https://demo.mysocialpinpoint.com/uploads/photo/image/5/459/limited_size_SocialPinpoint_Landscape_Icon.jpg"
             }
           ]
         }
@@ -143,7 +143,7 @@ An example result
         "category_id": 9,
         "created_at": "2013-10-24T14:54:05.696+11:00",
         "published_at": "2013-10-24T14:54:05.680+11:00",
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/775.json",
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/775.json",
         "comment": {
           "id": 485,
           "body": "This is my comment",
@@ -217,7 +217,7 @@ An example result
         "areas": "Planning Proposal Notification, NewcastleCBD, CBD",
         "photos": [
               {
-                "url": "https://demo.ourcommunitymap.com/uploads/photo/image/5/4/limited_size_logo-square.png"
+                "url": "https://demo.mysocialpinpoint.com/uploads/photo/image/5/4/limited_size_logo-square.png"
               }
         ],
         "comment_field_values": [
@@ -234,9 +234,9 @@ An example result
                "value": "I live here"
              }
         ],
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/comments/18.json",
-        "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/18.json",
-        "marker_link": "https://demo.ourcommunitymap.com/home#marker/18",
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/comments/18.json",
+        "marker_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/18.json",
+        "marker_link": "https://demo.mysocialpinpoint.com/home#marker/18",
         "marker": {
           "id": 18,
           "lat": "-32.927702",
@@ -274,9 +274,9 @@ An example result
         "published_at": "2013-06-26T09:53:51.402+10:00",
         "created_at": "2013-06-26T09:53:51.437+10:00",
         "areas": "Planning Proposal Notification, NewcastleCBD, CBD",
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/comments/81.json",
-        "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/81.json",
-        "marker_link": "https://demo.ourcommunitymap.com/home#marker/81",
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/comments/81.json",
+        "marker_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/81.json",
+        "marker_link": "https://demo.mysocialpinpoint.com/home#marker/81",
         "marker": {
           "id": 81,
           "lat": "-32.926959",
@@ -303,19 +303,19 @@ An example result
         "id": 261,
         "up_votes": 3,
         "down_votes": 1,
-        "body": "<p><strong>Proposed Tree Plantation Site</strong></p>\n\n<p>Improving the streetscape by planting trees? Why not inform the community about the project and allow stakeholders to have their say. </p>\n\n<p>Provide species information; <a href=\"https://demo.ourcommunitymap.com/home\">links to more infomation</a> - inform and engage!</p>\n",
+        "body": "<p><strong>Proposed Tree Plantation Site</strong></p>\n\n<p>Improving the streetscape by planting trees? Why not inform the community about the project and allow stakeholders to have their say. </p>\n\n<p>Provide species information; <a href=\"https://demo.mysocialpinpoint.com/home\">links to more infomation</a> - inform and engage!</p>\n",
         "summary": "Proposed Tree Plantation Site",
         "marker_id": 736,
         "published_at": "2013-10-10T14:25:05.895+11:00",
         "created_at": "2013-10-10T14:25:05.907+11:00",
         "photos": [
           {
-            "url": "https://demo.ourcommunitymap.com/uploads/photo/image/5/333/limited_size_TullichSt_Services.png"
+            "url": "https://demo.mysocialpinpoint.com/uploads/photo/image/5/333/limited_size_TullichSt_Services.png"
           }
         ],
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/info_markers/261.json",
-        "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/736.json",
-        "marker_link": "https://demo.ourcommunitymap.com/home#marker/736",
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/info_markers/261.json",
+        "marker_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/736.json",
+        "marker_link": "https://demo.mysocialpinpoint.com/home#marker/736",
         "marker": {
           "id": 736,
           "lat": "-32.928468",
@@ -356,9 +356,9 @@ An example result
             }
           ]
         },
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/info_markers/536.json",
-        "marker_url": "https://demo.ourcommunitymap.com/api/v1/projects/3/markers/2712.json",
-        "marker_link": "https://demo.ourcommunitymap.com/home#marker/2712",
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/info_markers/536.json",
+        "marker_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/2712.json",
+        "marker_link": "https://demo.mysocialpinpoint.com/home#marker/2712",
         "marker": {
           "id": 2712,
           "lat": "-32.928319",
@@ -486,7 +486,7 @@ An example result
         "admin_marker": false,
         "hint_title": "Leave us your comment",
         "instruction": null,
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/categories/9.json"
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/categories/9.json"
       },
       {
         "id": 10,
@@ -495,7 +495,7 @@ An example result
         "admin_marker": false,
         "hint_title": "Leave us your comment",
         "instruction": null,
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/categories/10.json"
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/categories/10.json"
       }
       ...
     ]
@@ -513,12 +513,12 @@ An example result
       {
         "id": 79,
         "name": "Footpaths",
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/tags/79.json"
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/tags/79.json"
       },
       {
         "id": 80,
         "name": "Industrial",
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/tags/80.json"
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/tags/80.json"
       }
       ...
     ]
@@ -553,7 +553,7 @@ An example result
         "label_stroke_weight": 4,
         "label_alignment": 2,
         "label_offset": 0,
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/zones/5.json",
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/zones/5.json",
         "zone_group": null
       },
       {
@@ -579,7 +579,7 @@ An example result
         "label_stroke_weight": 4,
         "label_alignment": 2,
         "label_offset": 0,
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3/zones/4.json",
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/zones/4.json",
         "zone_group": null
       }
 
