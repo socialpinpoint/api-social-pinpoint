@@ -55,6 +55,7 @@ The various resources you can retrieve from our API are all documented below.
     * [Tags](#tags)
     * [Zones](#zones)
     * [Statistics](#statistics)
+* [Stakeholders] (#stakeholders)
 * [Users](#Users)
 
 ## Projects
@@ -71,25 +72,23 @@ An example result
         "id": 3,
         "name": "Social Pinpoint ",
         "slug": "home",
-        "additional_confirmation_message": "We'd greatly appreciate a little further information in order to better understand your comment. Feel free to add any additional information in the area below.",
         "created_at": "2013-06-09T20:07:29.280+10:00",
-        "start_date": "2014-07-01T00:00:00.000+10:00",
-        "end_date": "2014-09-30T23:59:59.000+10:00",
+        "start_date": "2015-05-01T00:01:00.000+10:00",
+        "end_date": "2015-09-30T23:59:00.000+10:00",
         "time_zone": "Australia/Sydney",
-        "region": "AU",
-        "url": "https://demo.ourcommunitymap.com/api/v1/projects/3.json",
-        "project_link": "https://demo.ourcommunitymap.com/home",
+        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3.json",
+        "project_link": "https://demo.mysocialpinpoint.com/home",
         "project_state": "Active",
         "map": {
-                    "max_bounds_ratio": "0.6",
-                    "lat": "-32.92418",
-                    "lng": "151.62453",
-                    "zoom": 15,
-                    "min_zoom": 10,
-                    "max_zoom": 25,
-                    "styles": "",
-                    "map_type": "Hybrid"
-                }
+          "max_bounds_ratio": "0.0",
+          "lat": "-32.92852",
+          "lng": "151.77396",
+          "zoom": 15,
+          "min_zoom": 11,
+          "max_zoom": 25,
+          "styles": "",
+          "map_type": "Hybrid"
+        }
       }
     ]
 
@@ -145,13 +144,19 @@ An example result
           "review_notes": "",
           "response_text": null,
           "ip_address": null,
-          "email": "charles@socialpinpoint.com",
-          "firstname": null,
-          "lastname": null,
-          "phone": null,
-          "postcode": null,
-          "address": null,
-          "suburb": null,
+          "stakeholder": {
+                "id": 1245,
+                "first_name": "",
+                "last_name": null,
+                "address": null,
+                "suburb": null,
+                "postcode": null,
+                "state": null,
+                "country": null,
+                "email": "user@here.blah",
+                "phone": null,
+                "created_at": "2013-06-09T20:12:22.321+10:00"
+              },
           "reviewed": false,
           "moderated": false,
           "marker_id": 775,
@@ -162,9 +167,9 @@ An example result
         "info_marker": null
       }
     ]
-
+    
 ### Comments
-Comments are associated with a project and are attached to a geolocated marker
+Comments are associated with a project and are attached to a georeferenced marker and stakeholder
 
 `GET /api/v1/projects/{project_id}/comments.json` will return all comments for the `{project_id}`
 
@@ -180,13 +185,19 @@ An example result
         "review_notes": null,
         "response_text": null,
         "ip_address": null,
-        "email": "user@here.blah",
-        "firstname": "",
-        "lastname": null,
-        "phone": null,
-        "postcode": null,
-        "address": null,
-        "suburb": null,
+        "stakeholder": {
+              "id": 1245,
+              "first_name": "",
+              "last_name": null,
+              "address": null,
+              "suburb": null,
+              "postcode": null,
+              "state": null,
+              "country": null,
+              "email": "user@here.blah",
+              "phone": null,
+              "created_at": "2013-06-09T20:12:22.321+10:00"
+            },
         "reviewed": true,
         "moderated": false,
         "marker_id": 18,
@@ -233,13 +244,19 @@ An example result
         "review_notes": "",
         "response_text": null,
         "ip_address": null,
-        "email": "info@socialpinpoint.com",
-        "firstname": "Fred",
-        "lastname": "Smith",
-        "phone": "",
-        "postcode": "2302",
-        "address": null,
-        "suburb": null,
+         "stakeholder": {
+              "id": 834,
+              "first_name": "",
+              "last_name": "",
+              "address": "",
+              "suburb": "",
+              "postcode": "",
+              "state": null,
+              "country": null,
+              "email": "a@a.com",
+              "phone": "",
+              "created_at": "2014-06-03T13:34:46.481+10:00"
+            },
         "reviewed": true,
         "moderated": false,
         "marker_id": 81,
@@ -383,7 +400,19 @@ An example result
       {
         "id": 5,
         "name": "Infrastructure",
-        "email": "user@testproject.com",
+         "stakeholder": {
+              "id": 834,
+              "first_name": "",
+              "last_name": "",
+              "address": "",
+              "suburb": "",
+              "postcode": "",
+              "state": null,
+              "country": null,
+              "email": "a@a.com",
+              "phone": "",
+              "created_at": "2014-06-03T13:34:46.481+10:00"
+            },
         "updated_at": "2014-08-26T16:45:40.806+10:00",
         "marker_id": 2712,
         "zone_id": null,
@@ -545,6 +574,31 @@ An example result
 ### Statistics
 This is still to be implemented. We forsee this reporting various project metrics that are currently visible on the
 admin dashboard
+
+## Stakeholders
+The Stakeholder resource represents the end user who has left a comment or survey response. It contains information
+about that stakeholder and the responses they have contributed to your account
+
+`GET /api/v1/stakeholders.json` will return all stakeholders for your account
+
+An example result
+
+    [
+      {
+        "id": 10241,
+        "first_name": "Colin",
+        "last_name": "Goudie",
+        "address": "10 Somewhere Street",
+        "suburb": "Suburb",
+        "postcode": "2222",
+        "state": "NSW",
+        "country": "Australia",
+        "email": "colin@socialpinpoint.com",
+        "phone": "xxx xxx xx",
+        "created_at": "2016-12-06T14:28:53.416+11:00"
+      },
+      ...
+    ]
 
 ## Users
 Social Pinpoint does not require public users to create an account to interact with the site. User accounts are only
