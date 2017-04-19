@@ -62,7 +62,7 @@ The various resources you can retrieve from our API are all documented below.
     * [Tags](#tags)
     * [Zones](#zones)
     * [Statistics](#statistics)
-* [Stakeholders] (#stakeholders)
+* [Stakeholders](#stakeholders)
 * [Users](#Users)
 
 ## Projects
@@ -196,6 +196,7 @@ An example result
         "review_notes": null,
         "response_text": null,
         "ip_address": null,
+        "stakeholder_url": "http://demo.lvh.me:3030/api/v1/stakeholders/1245.json",
         "stakeholder": {
               "id": 1245,
               "first_name": "",
@@ -255,6 +256,7 @@ An example result
         "review_notes": "",
         "response_text": null,
         "ip_address": null,
+        "stakeholder_url": "http://demo.lvh.me:3030/api/v1/stakeholders/834.json",
          "stakeholder": {
               "id": 834,
               "first_name": "",
@@ -412,6 +414,7 @@ An example result
       {
         "id": 5,
         "name": "Infrastructure",
+        "stakeholder_url": "http://demo.lvh.me:3030/api/v1/stakeholders/834.json",
          "stakeholder": {
               "id": 834,
               "first_name": "",
