@@ -42,6 +42,13 @@ Link properties are actual URLs that link to non-api urls. For example, the `pro
 
     "project_link": "https://demo.ourcommunitymap.com/home",
 
+# Paging
+Various resources support paging. If the resource does then the paging details are returned in the response headers
+
+    Link: <http://demo.lvh.me:3030/api/v1/comments.json?page=5>; rel="last", <http://demo.lvh.me:3030/api/v1/comments.json?page=2>; rel="next"
+    Per-Page: 50
+    Total: 209
+
 # Resources
 The various resources you can retrieve from our API are all documented below.
 
@@ -94,6 +101,8 @@ An example result
 
 
 ### Markers
+_Supports Paging_
+
 Markers are added to the map via users and also may contain information specifically added by administrators. The API
 call will contain either the associated `comment` or `information_marker`
 
@@ -169,6 +178,8 @@ An example result
     ]
     
 ### Comments
+_Supports Paging_
+
 Comments are associated with a project and are attached to a georeferenced marker and stakeholder
 
 `GET /api/v1/projects/{project_id}/comments.json` will return all comments for the `{project_id}`
@@ -393,6 +404,7 @@ An example result
 
 
 ### Survey Responses
+_Supports Paging_
 
 An example result
 
@@ -576,6 +588,8 @@ This is still to be implemented. We forsee this reporting various project metric
 admin dashboard
 
 ## Stakeholders
+_Supports Paging_
+
 The Stakeholder resource represents the end user who has left a comment or survey response. It contains information
 about that stakeholder and the responses they have contributed to your account
 
