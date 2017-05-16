@@ -49,6 +49,15 @@ Various resources support paging. If the resource does then the paging details a
     Per-Page: 50
     Total: 209
 
+# Timestamp Format
+Various resources support a timestamp paramter. The format should be in 
+
+    timestamp=2016-06-01
+    
+or
+
+    timestamp=2016-06-01T00:00:00
+
 # Resources
 The various resources you can retrieve from our API are all documented below.
 
