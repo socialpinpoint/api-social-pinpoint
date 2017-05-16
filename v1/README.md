@@ -72,6 +72,8 @@ For documentation see [our online documentation](http://wiki.socialpinpoint.com/
 
 `GET /api/v1/projects.json` will return a list of all the projects associated with the site account
 
+You can also specify a ``timestamp`` parameter and only projects with a ``created_at`` after that time will be returned
+
 An example result
 
     [
@@ -107,6 +109,8 @@ Markers are added to the map via users and also may contain information specific
 call will contain either the associated `comment` or `information_marker`
 
 `GET /api/v1/projects/{project_id}/markers.json` will return all markers for the `{project_id}`
+
+You can also specify a ``timestamp`` parameter and only markers with a ``published_at`` after that time will be returned
 
 An example result
 
@@ -183,6 +187,8 @@ _Supports Paging_
 Comments are associated with a project and are attached to a georeferenced marker and stakeholder
 
 `GET /api/v1/projects/{project_id}/comments.json` will return all comments for the `{project_id}`
+
+You can also specify a ``timestamp`` parameter and only comments with a ``created_at`` after that time will be returned
 
 An example result
 
