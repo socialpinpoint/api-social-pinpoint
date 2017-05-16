@@ -66,6 +66,8 @@ The various resources you can retrieve from our API are all documented below.
 * [Users](#Users)
 
 ## Projects
+_Supports Paging_
+
 Engagement activities are organised under projects.
 
 For documentation see [our online documentation](http://wiki.socialpinpoint.com/display/Public/Project+Setup+-+Projects)
