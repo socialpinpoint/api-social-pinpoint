@@ -201,6 +201,11 @@ Comments are associated with a project and are attached to a georeferenced marke
 
 You can also specify a ``timestamp`` parameter and only comments with a ``created_at`` after that time will be returned
 
+You will notice there is a ``marker_url`` and ``parent_url`` attribute in comments
+
+Comments can comment on other comments. Hence ``marker_url`` refers to the link back to the parent marker that the comment was made on.
+``parent_url`` refers to the link of the parent of this comment. It could be a marker or a nother comment
+
 An example result
 
     [
@@ -253,6 +258,7 @@ An example result
              }
         ],
         "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/comments/18.json",
+        "parent_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/18.json",
         "marker_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/18.json",
         "marker_link": "https://demo.mysocialpinpoint.com/home#marker/18",
         "marker": {
@@ -294,6 +300,7 @@ An example result
         "created_at": "2013-06-26T09:53:51.437+10:00",
         "areas": "Planning Proposal Notification, NewcastleCBD, CBD",
         "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/comments/81.json",
+        "parent_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/81.json",
         "marker_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/81.json",
         "marker_link": "https://demo.mysocialpinpoint.com/home#marker/81",
         "marker": {
