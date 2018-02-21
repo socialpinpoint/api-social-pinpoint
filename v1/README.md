@@ -405,32 +405,44 @@ An example result
 
     [
       {
-        "id": 10,
-        "name": "Infrastructure",
+        "id": 251,
+        "name": "Project Survey",
+        "submit_url": "",
+        "thank_you_message": "",
+        "mail_body": "<p>Thanks for submitting a survey response</p>",
+        "mail_subject": "Thanks for your response",
+        "single_submit": false,
         "questions": [
-          {
-            "id": 28,
-            "name": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
-            "required": false,
-            "body": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
-            "options": "Shops\r\nSchools\r\nHealth services\r\nRestaurants and cafes\r\nParks",
-            "question_type": "Rank"
-          },
-          {
-            "id": 29,
-            "name": "Relationship to study area (select all that apply)",
-            "required": false,
-            "body": "Relationship to study area (select all that apply)",
-            "options": "I live here\r\nI work here\r\nFrequent Visitor\r\nOther",
-            "question_type": "Checkbox"
-          }
-        ]
+            {
+                "id": 841,
+                "name": "Question 1",
+                "required": false,
+                "body": "How great is Social Pinpoint?",
+                "options": "Awesome!\r\nSuper duper!\r\nI love it!",
+                "inline": false,
+                "sort_order": 1,
+                "question_type": "Checkbox"
+            },
+            {
+                "id": 893,
+                "name": "Question 2",
+                "required": false,
+                "body": "This is a sample survey. Did you find this information useful?",
+                "options": "",
+                "inline": false,
+                "sort_order": null,
+                "question_type": "Text Area"
+            }
+        ],
+        "survey_submit_action": "Submit then Close"
       }
     ]
 
 
 ### Survey Responses
 _Supports Paging_
+
+`GET /api/v1/projects/{project_id}/survey_responses.json' will return all configured surveys for the `{project_id}`
 
 An example result
 
@@ -558,32 +570,6 @@ An example result
 
     [
       {
-        "id": 5,
-        "name": "Place Management Strategy",
-        "colour": "#000000",
-        "line_opacity": "0.4",
-        "line_width": 4,
-        "fill_colour": "#000000",
-        "fill_opacity": "0.05",
-        "updated_at": "2014-03-20T11:40:39.984+11:00",
-        "area_info": "",
-        "zindex": 400,
-        "legend_stroke_colour": "#000000",
-        "legend_fill_colour": "#000000",
-        "legend_label": "Place Management Strategy",
-        "show_labels": false,
-        "min_zoom": 11,
-        "max_zoom": 15,
-        "font_size": 24,
-        "label_font_color": "#000000",
-        "label_stroke_color": "#ffffff",
-        "label_stroke_weight": 4,
-        "label_alignment": 2,
-        "label_offset": 0,
-        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/zones/5.json",
-        "zone_group": null
-      },
-      {
         "id": 4,
         "name": "Growth Strategies",
         "colour": "#000000",
@@ -591,24 +577,97 @@ An example result
         "line_width": 4,
         "fill_colour": "#000000",
         "fill_opacity": "0.05",
-        "updated_at": "2014-03-20T11:40:44.758+11:00",
+        "created_at": "2013-06-09T05:09:54.364-05:00",
+        "updated_at": "2017-10-31T16:19:14.061-05:00",
         "area_info": "",
+        "viewable_in_legend": false,
+        "clickable": false,
         "zindex": 400,
+        "discussion": false,
+        "allow_voting": false,
+        "up_votes": 0,
+        "down_votes": 0,
         "legend_stroke_colour": "#000000",
         "legend_fill_colour": "#000000",
         "legend_label": "Growth Strategies",
+        "zone_select_action": 1,
+        "select_url": null,
+        "legend_fill_style": 1,
+        "sidebar_tab": null,
+        "legend_order": 400,
         "show_labels": false,
         "min_zoom": 11,
         "max_zoom": 15,
         "font_size": 24,
+        "line_symbol": 0,
+        "line_arrow_position": 0,
+        "line_arrow_symbol": 0,
+        "line_arrow_scale": 1,
+        "line_symbol_scale": 1,
+        "point_symbol_scale": 1,
         "label_font_color": "#000000",
         "label_stroke_color": "#ffffff",
         "label_stroke_weight": 4,
         "label_alignment": 2,
         "label_offset": 0,
-        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/zones/4.json",
-        "zone_group": null
-      }
+        "legend_action_trigger": false,
+        "points": [],
+        "legend_group": null,
+        "legend_symbol": null,
+        "point_symbol": null,
+        "replies": 0,
+        "url": "http://demo.dev-myspp.com/api/v1/projects/3/zones/4.json"
+      },
+      {
+        "id": 151,
+        "name": "B - Hunter Street",
+        "colour": "#d200ff",
+        "line_opacity": "1.0",
+        "line_width": 5,
+        "fill_colour": "#d200ff",
+        "fill_opacity": "0.0",
+        "created_at": "2014-03-23T15:51:06.981-05:00",
+        "updated_at": "2017-10-31T16:18:32.098-05:00",
+        "area_info": "",
+        "viewable_in_legend": true,
+        "clickable": false,
+        "zindex": 400,
+        "discussion": false,
+        "allow_voting": false,
+        "up_votes": 0,
+        "down_votes": 0,
+        "legend_stroke_colour": "#d200ff",
+        "legend_fill_colour": "#d200ff",
+        "legend_label": "B - Hunter Street",
+        "zone_select_action": 1,
+        "select_url": "",
+        "legend_fill_style": 1,
+        "sidebar_tab": null,
+        "legend_order": 400,
+        "show_labels": false,
+        "min_zoom": 11,
+        "max_zoom": 15,
+        "font_size": 24,
+        "line_symbol": 0,
+        "line_arrow_position": null,
+        "line_arrow_symbol": 1,
+        "line_arrow_scale": 1,
+        "line_symbol_scale": 1,
+        "point_symbol_scale": 1,
+        "label_font_color": "#000000",
+        "label_stroke_color": "#ffffff",
+        "label_stroke_weight": 4,
+        "label_alignment": 2,
+        "label_offset": 0,
+        "legend_action_trigger": false,
+        "points": [],
+        "legend_group": "Example Light Rail Options",
+        "legend_symbol": "spp-icon-straight-line",
+        "point_symbol": "",
+        "replies": 0,
+        "url": "http://demo.dev-myspp.com/api/v1/projects/3/zones/151.json"
+      }   
+    ]
 
 ### Statistics
 This is still to be implemented. We forsee this reporting various project metrics that are currently visible on the
