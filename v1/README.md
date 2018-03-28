@@ -46,8 +46,12 @@ Link properties are actual URLs that link to non-api urls. For example, the `pro
 Various resources support paging. If the resource does then the paging details are returned in the response headers
 
     Link: <http://demo.lvh.me:3030/api/v1/comments.json?page=5>; rel="last", <http://demo.lvh.me:3030/api/v1/comments.json?page=2>; rel="next"
-    Per-Page: 50
+    Per-Page: 25
     Total: 209
+    
+Default page sizes are '25', but you can change this with URL param ```per_page```
+
+    `GET /api/v1/projects.json?per_page=1000`
 
 # Timestamp Format
 Various resources support a timestamp paramter. The format should be in 
