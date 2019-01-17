@@ -10,7 +10,6 @@ in question can be used to access the API.
 
 Non admin access is at present not available.
 
-
 # Authentication Overview
 The API is protected by Basic HTTP Authentication over SSL. You will be prompted in your browser when accessing our API
 endpoints or you can provide them in your client of choice when connecting to the API.
@@ -48,22 +47,24 @@ Various resources support paging. If the resource does then the paging details a
     Link: <http://demo.lvh.me:3030/api/v1/comments.json?page=5>; rel="last", <http://demo.lvh.me:3030/api/v1/comments.json?page=2>; rel="next"
     Per-Page: 25
     Total: 209
-    
+
 Default page sizes are '25', but you can change this with URL param ```per_page```
 
     `GET /api/v1/projects.json?per_page=1000`
 
 # Timestamp Format
-Various resources support a timestamp paramter. The format should be in 
+Various resources support a timestamp paramter. The format should be in
 
     timestamp=2016-06-01
-    
+
 or
 
     timestamp=2016-06-01T00:00:00
 
 # Resources
 The various resources you can retrieve from our API are all documented below.
+
+NOTE: These are examples and the data shown may not be internally consistent in each result. Use for reference only
 
 * [Projects](#projects)
     * [Markers](#markers)
@@ -195,7 +196,7 @@ An example result
         "info_marker": null
       }
     ]
-    
+
 ### Comments
 _Supports Paging_
 
@@ -210,6 +211,8 @@ You will notice there is a ``marker_url`` and ``parent_url`` attribute in commen
 Comments can comment on other comments. Hence ``marker_url`` refers to the link back to the parent marker that the comment was made on.
 ``parent_url`` refers to the link of the parent of this comment. It could be a marker or a nother comment
 
+Comments also contain a field called 'full_response' which aggregates body, body_extra and survey response text
+
 An example result
 
     [
@@ -223,6 +226,7 @@ An example result
         "response_text": null,
         "ip_address": null,
         "stakeholder_url": "http://demo.lvh.me:3030/api/v1/stakeholders/1245.json",
+         "full_response": "A very cost effective and proven method for effective consultation and collaboration\n\nSurvey Response to: 'Land Use Planning Demo Survey'\n  1. How do travel\n  \n     - Ride\n\n  2. Additional Comments\n   - Did not answer\n\n"
         "stakeholder": {
               "id": 1245,
               "first_name": "",
@@ -265,6 +269,7 @@ An example result
         "parent_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/18.json",
         "marker_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/18.json",
         "marker_link": "https://demo.mysocialpinpoint.com/home#marker/18",
+        "review_url": "http://demo.lvh.me:3030/admin/comments/18/edit",
         "marker": {
           "id": 18,
           "lat": "-32.927702",
@@ -448,6 +453,8 @@ _Supports Paging_
 
 `GET /api/v1/projects/{project_id}/survey_responses.json' will return all configured surveys for the `{project_id}`
 
+Survey Responses also contain a field called 'full_response' which aggregates survey response text
+
 An example result
 
     [
@@ -471,6 +478,8 @@ An example result
         "updated_at": "2014-08-26T16:45:40.806+10:00",
         "marker_id": 2712,
         "zone_id": null,
+        "review_url": "http://demo.lvh.me:3030/admin/survey_responses/5/edit",
+        "full_response": "Survey Response to: 'SampleSurvey-planningdemo'\n  1. Rate these\n  \n     - Affordable Housing\n\n     - Public Transport\n\n     - Jobs\n\n     - Education \n\n     - Environment\n\n  2. Question\n   - Did not answer\n  3. Ideas and Suggestions\n  \n     - \n\n"
         "survey_answers": [
           {
             "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
@@ -670,7 +679,7 @@ An example result
         "point_symbol": "",
         "replies": 0,
         "url": "http://demo.dev-myspp.com/api/v1/projects/3/zones/151.json"
-      }   
+      }
     ]
 
 ### Statistics
