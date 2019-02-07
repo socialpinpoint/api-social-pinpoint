@@ -217,80 +217,21 @@ An example result
 
     [
       {
-        "id": 18,
-        "body": "A very cost effective and proven method for effective consultation and collaboration",
-        "body_extra": null,
-        "up_votes": 4,
-        "down_votes": 1,
-        "review_notes": null,
-        "response_text": null,
-        "ip_address": null,
-        "stakeholder_url": "http://demo.lvh.me:3030/api/v1/stakeholders/1245.json",
-         "full_response": "A very cost effective and proven method for effective consultation and collaboration\n\nSurvey Response to: 'Land Use Planning Demo Survey'\n  1. How do travel\n  \n     - Ride\n\n  2. Additional Comments\n   - Did not answer\n\n"
-        "stakeholder": {
-              "id": 1245,
-              "first_name": "",
-              "last_name": null,
-              "address": null,
-              "suburb": null,
-              "postcode": null,
-              "state": null,
-              "country": null,
-              "email": "user@here.blah",
-              "phone": null,
-              "created_at": "2013-06-09T20:12:22.321+10:00"
-            },
-        "reviewed": true,
-        "moderated": false,
-        "marker_id": 18,
-        "published_at": "2013-06-09T20:12:22.321+10:00",
-        "created_at": "2013-06-09T20:12:22.353+10:00",
-        "areas": "Planning Proposal Notification, NewcastleCBD, CBD",
-        "photos": [
-              {
-                "url": "https://demo.mysocialpinpoint.com/uploads/photo/image/5/4/limited_size_logo-square.png"
-              }
-        ],
-        "comment_field_values": [
-             {
-               "name": "Age Demographic",
-               "value": "30-39"
-             },
-             {
-               "name": "Gender",
-               "value": "Female"
-             },
-             {
-               "name": "Relationship to Study Area",
-               "value": "I live here"
-             }
-        ],
-        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/comments/18.json",
-        "parent_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/18.json",
-        "marker_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/18.json",
-        "marker_link": "https://demo.mysocialpinpoint.com/home#marker/18",
-        "review_url": "http://demo.lvh.me:3030/admin/comments/18/edit",
-        "marker": {
-          "id": 18,
-          "lat": "-32.927702",
-          "lng": "151.772202",
-          "category_id": 9,
-          "created_at": "2013-06-09T20:12:22.322+10:00",
-          "published_at": "2013-06-09T20:12:22.322+10:00"
-        }
-      },
-      {
-        "id": 81,
-        "body": "Community Issues are important - have your say!",
-        "body_extra": "",
-        "up_votes": 4,
-        "down_votes": 1,
-        "review_notes": "",
-        "response_text": null,
-        "ip_address": null,
-        "stakeholder_url": "http://demo.lvh.me:3030/api/v1/stakeholders/834.json",
-         "stakeholder": {
-              "id": 834,
+          "id": 12162,
+          "body": "This is a sample comment about why I love this area!",
+          "body_extra": "",
+          "up_votes": 1,
+          "down_votes": 1,
+          "review_notes": "",
+          "response_text": "",
+          "ip_address": "120.146.151.160",
+          "reviewed": true,
+          "moderated": false,
+          "marker_id": 13562,
+          "published_at": "2016-03-15T13:14:09.926+11:00",
+          "created_at": "2016-03-15T13:14:10.001+11:00",
+          "stakeholder": {
+              "id": 1030,
               "first_name": "",
               "last_name": "",
               "address": "",
@@ -298,28 +239,31 @@ An example result
               "postcode": "",
               "state": null,
               "country": null,
-              "email": "a@a.com",
+              "email": "charles@socialpinpoint.com",
               "phone": "",
-              "created_at": "2014-06-03T13:34:46.481+10:00"
-            },
-        "reviewed": true,
-        "moderated": false,
-        "marker_id": 81,
-        "published_at": "2013-06-26T09:53:51.402+10:00",
-        "created_at": "2013-06-26T09:53:51.437+10:00",
-        "areas": "Planning Proposal Notification, NewcastleCBD, CBD",
-        "url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/comments/81.json",
-        "parent_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/81.json",
-        "marker_url": "https://demo.mysocialpinpoint.com/api/v1/projects/3/markers/81.json",
-        "marker_link": "https://demo.mysocialpinpoint.com/home#marker/81",
-        "marker": {
-          "id": 81,
-          "lat": "-32.926959",
-          "lng": "151.772668",
-          "category_id": 13,
-          "created_at": "2013-06-26T09:53:51.404+10:00",
-          "published_at": "2013-06-26T09:53:51.404+10:00"
-        }
+              "created_at": "2013-06-26T09:39:41.882+10:00"
+          },
+          "photos": [
+              {
+                  "url": "https://demo.staging-myspp.comhttps://s3-us-west-2.amazonaws.com/staging-myspp/uploads/photo/image/5/1292/limited_size_swing.jpg"
+              }
+          ],
+          "areas": "Industrial, Area of Influence, Study Area",
+          "url": "https://demo.staging-myspp.com/api/v1/projects/166/comments/12162.json",
+          "parent_url": "https://demo.staging-myspp.com/api/v1/projects/166/markers/13562.json",
+          "marker_url": "https://demo.staging-myspp.com/api/v1/projects/166/markers/13562.json",
+          "marker_link": "https://demo.staging-myspp.com/land-use/map#/marker/13562",
+          "review_url": "https://demo.staging-myspp.com/admin/comments/12162/edit",
+          "marker": {
+              "id": 13562,
+              "lat": "-33.764878",
+              "lng": "151.260409",
+              "category_id": 703,
+              "created_at": "2016-03-15T13:14:09.960+11:00",
+              "published_at": "2016-03-15T13:14:09.924+11:00"
+          },
+          "stakeholder_url": "https://demo.staging-myspp.com/api/v1/stakeholders/1030.json",
+          "full_response": "This is a sample comment about why I love this area!\n\n\n"
       },
       ...
     ]
