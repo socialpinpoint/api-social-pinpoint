@@ -253,6 +253,7 @@ An example result
           "parent_url": "https://demo.staging-myspp.com/api/v1/projects/166/markers/13562.json",
           "marker_url": "https://demo.staging-myspp.com/api/v1/projects/166/markers/13562.json",
           "marker_link": "https://demo.staging-myspp.com/land-use/map#/marker/13562",
+          "marker_view_link": "https://demo.staging-myspp.com/markers/view/13562",
           "review_url": "https://demo.staging-myspp.com/admin/comments/12162/edit",
           "marker": {
               "id": 13562,
