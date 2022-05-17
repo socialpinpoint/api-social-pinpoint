@@ -2,8 +2,6 @@
 This document outlines our JSON REST API that client can use to retrieve information in their projects. This API
 requires authentication.
 
-### **Warning: The API is still in development so some small changes may occur **
-
 The Social Pinpoint API is REST based and uses [JSON](http://www.json.org/) for serialisation and Basic Authentication
 over SSL for authentication and encrypted communication. The access credentials of any admin user in the site account
 in question can be used to access the API.
@@ -66,18 +64,28 @@ The various resources you can retrieve from our API are all documented below.
 
 NOTE: These are examples and the data shown may not be internally consistent in each result. Use for reference only
 
-* [Projects](#projects)
-    * [Markers](#markers)
-    * [Comments](#comments)
-    * [Information Markers](#information-markers)
-    * [Surveys](#surveys)
-    * [Survey Responses](#survey-responses)
-    * [Marker Types](#marker-types)
-    * [Tags](#tags)
-    * [Zones](#zones)
-    * [Statistics](#statistics)
-* [Stakeholders](#stakeholders)
-* [Users](#Users)
+- [Social Pinpoint API Documentation](#social-pinpoint-api-documentation)
+- [Authentication Overview](#authentication-overview)
+- [API Overview](#api-overview)
+  - [Notes about id, url and links](#notes-about-id-url-and-links)
+    - [id's](#ids)
+    - [URL's](#urls)
+    - [Links](#links)
+- [Paging](#paging)
+- [Timestamp Format](#timestamp-format)
+- [Resources](#resources)
+  - [Projects](#projects)
+    - [Markers](#markers)
+    - [Comments](#comments)
+    - [Information Markers](#information-markers)
+    - [Surveys](#surveys)
+    - [Survey Responses](#survey-responses)
+    - [Marker Types](#marker-types)
+    - [Tags](#tags)
+    - [Zones](#zones)
+    - [Statistics](#statistics)
+  - [Stakeholders](#stakeholders)
+  - [Users](#users)
 
 ## Projects
 _Supports Paging_
