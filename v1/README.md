@@ -253,7 +253,7 @@ An example result
           },
           "photos": [
               {
-                  "url": "https://demo.staging-myspp.comhttps://s3-us-west-2.amazonaws.com/staging-myspp/uploads/photo/image/5/1292/limited_size_swing.jpg"
+                  "url": "https://s3-us-west-2.amazonaws.com/staging-myspp/uploads/photo/image/5/1292/limited_size_swing.jpg"
               }
           ],
           "areas": "Industrial, Area of Influence, Study Area",
@@ -383,7 +383,8 @@ An example result
                 "options": "Awesome!\r\nSuper duper!\r\nI love it!",
                 "inline": false,
                 "sort_order": 1,
-                "question_type": "Checkbox"
+                "question_type": "Checkbox",
+                "type_specific_data: {}
             },
             {
                 "id": 893,
@@ -393,7 +394,8 @@ An example result
                 "options": "",
                 "inline": false,
                 "sort_order": null,
-                "question_type": "Text Area"
+                "question_type": "Text Area",
+                "type_specific_data: {}
             }
         ],
         "survey_submit_action": "Submit then Close"
@@ -404,7 +406,7 @@ An example result
 ### Survey Responses
 _Supports Paging_
 
-`GET /api/v1/projects/{project_id}/survey_responses.json' will return all configured surveys for the `{project_id}`
+`GET /api/v1/projects/{project_id}/survey_responses.json` will return all configured surveys for the `{project_id}`
 
 Survey Responses also contain a field called 'full_response' which aggregates survey response text
 
@@ -510,7 +512,7 @@ Tags allow the moderator/reviewer to categorise comments at a finer level to Mar
 
 for document see [our online documentation](http://wiki.socialpinpoint.com/x/VgAV)
 
-`GET /api/v1/projects/{project_id}/tags.json' will return all tags for the `{project_id}`
+`GET /api/v1/projects/{project_id}/tags.json` will return all tags for the `{project_id}`
 
 An example result
 
@@ -530,7 +532,7 @@ An example result
 
 ### Zones
 
-`GET /api/v1/projects/{project_id}/zones.json' will return all tags for the `{project_id}`
+`GET /api/v1/projects/{project_id}/zones.json` will return all tags for the `{project_id}`
 
 An example result
 
