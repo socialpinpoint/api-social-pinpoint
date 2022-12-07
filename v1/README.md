@@ -257,6 +257,16 @@ An example result
               }
           ],
           "areas": "Industrial, Area of Influence, Study Area",
+          "capture_parameters": [
+            {
+                "name": "User ID",
+                "value": "12345"
+            },
+            {
+                "name": "Source",
+                "value": "email"
+            }
+          ],
           "url": "https://demo.staging-myspp.com/api/v1/projects/166/comments/12162.json",
           "parent_url": "https://demo.staging-myspp.com/api/v1/projects/166/markers/13562.json",
           "marker_url": "https://demo.staging-myspp.com/api/v1/projects/166/markers/13562.json",
@@ -471,7 +481,17 @@ An example result
             "value": "Other",
             "rank": null
           }
-        ]
+        ],
+        "capture_parameters": [
+            {
+                "name": "User ID",
+                "value": "12345"
+            },
+            {
+                "name": "Source",
+                "value": "email"
+            }
+        ],
       }
     ]
 
