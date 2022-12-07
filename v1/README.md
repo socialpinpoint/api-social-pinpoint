@@ -417,7 +417,7 @@ An example result
         "id": 5,
         "name": "Infrastructure",
         "stakeholder_url": "http://demo.lvh.me:3030/api/v1/stakeholders/834.json",
-         "stakeholder": {
+        "stakeholder": {
               "id": 834,
               "first_name": "",
               "last_name": "",
@@ -430,6 +430,7 @@ An example result
               "phone": "",
               "created_at": "2014-06-03T13:34:46.481+10:00"
             },
+        "survey_id": 1,
         "updated_at": "2014-08-26T16:45:40.806+10:00",
         "marker_id": 2712,
         "zone_id": null,
@@ -437,37 +438,37 @@ An example result
         "full_response": "Survey Response to: 'SampleSurvey-planningdemo'\n  1. Rate these\n  \n     - Affordable Housing\n\n     - Public Transport\n\n     - Jobs\n\n     - Education \n\n     - Environment\n\n  2. Question\n   - Did not answer\n  3. Ideas and Suggestions\n  \n     - \n\n"
         "survey_answers": [
           {
-            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "question_id":  1,
             "value": "Shops",
             "rank": 1
           },
           {
-            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "question_id":  1,
             "value": "Schools",
             "rank": 2
           },
           {
-            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "question_id":  1,
             "value": "Health services",
             "rank": 3
           },
           {
-            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "question_id":  1,
             "value": "Restaurants and cafes",
             "rank": 4
           },
           {
-            "question": "How important is it that you live close to the following? Please rank these items where 1= Most important and 5 = least important ",
+            "question_id":  1,
             "value": "Parks",
             "rank": 5
           },
           {
-            "question": "Relationship to study area (select all that apply)",
+            "question_id":  2,
             "value": "I live here",
             "rank": null
           },
           {
-            "question": "Relationship to study area (select all that apply)",
+            "question_id":  2,
             "value": "Other",
             "rank": null
           }
