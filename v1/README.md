@@ -1,8 +1,8 @@
-# Social Pinpoint API Documentation
+# Social Pinpoint Classic API Documentation
 This document outlines our JSON REST API that client can use to retrieve information in their projects. This API
 requires authentication.
 
-The Social Pinpoint API is REST based and uses [JSON](http://www.json.org/) for serialisation and Basic Authentication
+The Social Pinpoint Classic API is REST based and uses [JSON](http://www.json.org/) for serialisation and Basic Authentication
 over SSL for authentication and encrypted communication. The access credentials of any admin user in the site account
 in question can be used to access the API.
 
@@ -64,7 +64,7 @@ The various resources you can retrieve from our API are all documented below.
 
 NOTE: These are examples and the data shown may not be internally consistent in each result. Use for reference only
 
-- [Social Pinpoint API Documentation](#social-pinpoint-api-documentation)
+- [Social Pinpoint Classic API Documentation](#social-pinpoint-api-documentation)
 - [Authentication Overview](#authentication-overview)
 - [API Overview](#api-overview)
   - [Notes about id, url and links](#notes-about-id-url-and-links)
@@ -278,7 +278,7 @@ An example result
     ]
 
 ### Information Markers
-Social Pinpoint allows you to configure Admin (or Information) Markers that can only be selected/ dragged onto the map by Administrators when logged into the system and are useful for displaying information related to areas on the map.
+Social Pinpoint Classic allows you to configure Admin (or Information) Markers that can only be selected/ dragged onto the map by Administrators when logged into the system and are useful for displaying information related to areas on the map.
 
 For documentation see [our online documentation](http://wiki.socialpinpoint.com/x/KwAc)
 
@@ -670,7 +670,7 @@ An example result
     ]
 
 ## Users
-Social Pinpoint does not require public users to create an account to interact with the site. User accounts are only
+Social Pinpoint Classic does not require public users to create an account to interact with the site. User accounts are only
 required for site Administrators so that they can login to the Admin site, have access to system setup, comment
 moderation and review and export system data.
 
