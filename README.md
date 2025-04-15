@@ -10,11 +10,7 @@ v1 folder above
 ## Other products and API references
 
 ### Social Pinpoint
-* AU: [https://api.au.harvestdp.com/doc/api/ui/redoc](https://api.au.harvestdp.com/doc/api/ui/redoc)
-* US: [https://api.us.harvestdp.com/doc/api/ui/redoc](https://api.us.harvestdp.com/doc/api/ui/redoc)
-* CA: [https://api.ca.harvestdp.com/doc/api/ui/redoc](https://api.ca.harvestdp.com/doc/api/ui/redoc)
-* EU: [https://api.eu.harvestdp.com/doc/api/ui/redoc](https://api.eu.harvestdp.com/doc/api/ui/redoc)
-
+* Please reach out to [Social Pinpoint Support](https://knowledge.socialpinpoint.com/portal) for details on API access and Documentation.
 
 ### Consultation Manager
 Please see [Api Access](https://help.consultationmanager.com/migration/api-access-consultation-manager-help-center) in the Consultation Manager Helpdesk for information on access and authentication to the API platform.
